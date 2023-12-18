@@ -6,8 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Input Kegiatan Tahfizh</h1>
-    <input name="surah">
-    <input name="halaman">
+    <a href="{{ URL('/kegiatantahfiz/add') }}">Tambah Setoran</a></br>
+    <a href="{{ URL('/kegiatantahfiz/edit') }}">Edit Setoran</a></br>
+    <a href="{{ URL('/kegiatantahfiz/delete') }}">Hapus Setoran</a>
 </body>
 </html>

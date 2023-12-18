@@ -61,5 +61,7 @@ class KegiatanTahfizhController extends Controller
     public function destroy(KegiatanTahfizh $kegiatanTahfizh)
     {
         echo "anjay";
+        $kegiatantahfizh = KegiatanTahfizh::all();
+        return view('kegiatantahfiz.indextahfiz', compact('kegiatantahfiz'));
     }
 }
