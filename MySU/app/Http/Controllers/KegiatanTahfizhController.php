@@ -12,7 +12,7 @@ class KegiatanTahfizhController extends Controller
      */
     public function index()
     {
-        //
+        return view('kegiatantahfiz.indextahfiz');
     }
 
     /**
@@ -20,7 +20,7 @@ class KegiatanTahfizhController extends Controller
      */
     public function create()
     {
-        //
+        return view('kegiatantahfiz.createtahfiz');
     }
 
     /**
@@ -28,7 +28,7 @@ class KegiatanTahfizhController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo "anjay";
     }
 
     /**
@@ -44,7 +44,7 @@ class KegiatanTahfizhController extends Controller
      */
     public function edit(KegiatanTahfizh $kegiatanTahfizh)
     {
-        //
+        return view('kegiatantahfiz.edittahfiz');
     }
 
     /**
@@ -52,7 +52,7 @@ class KegiatanTahfizhController extends Controller
      */
     public function update(Request $request, KegiatanTahfizh $kegiatanTahfizh)
     {
-        //
+        echo "anjay";
     }
 
     /**
@@ -60,6 +60,6 @@ class KegiatanTahfizhController extends Controller
      */
     public function destroy(KegiatanTahfizh $kegiatanTahfizh)
     {
-        //
+        echo "anjay";
     }
 }
