@@ -11,12 +11,8 @@
                 <input type="text" class="form-control" name="nama" value="{{ $Piket->nama }}" required>
             </div>
             <div class="form-group">
-                <label for="deskripsi">Deskripsi:</label>
-                <textarea class="form-control" name="deskripsi" required>{{ $Piket->deskripsi }}</textarea>
-            </div>
-            <div class="form-group">
-                <label for="jumlah">Jumlah:</label>
-                <input type="number" class="form-control" name="jumlah" value="{{ $Piket->jumlah }}" required>
+                <label for="deskripsi">Hari:</label>
+                <textarea class="form-control" name="hari" required>{{ $Piket->hari }}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Perbarui</button>
         </form>

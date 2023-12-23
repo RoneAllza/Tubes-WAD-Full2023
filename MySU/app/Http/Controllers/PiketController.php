@@ -39,8 +39,7 @@ class PiketController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'deskripsi' => 'required',
-            'jumlah' => 'required|numeric',
+            'hari' => 'required',
         ]);
 
         $Piket = Piket::findOrFail($id);

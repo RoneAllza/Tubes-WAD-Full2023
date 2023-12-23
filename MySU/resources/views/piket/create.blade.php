@@ -11,7 +11,7 @@
             </div>
             <div class="form-group">
                 <label for="deskripsi">Hari:</label>
-                <textarea class="form-control" name="deskripsi" required></textarea>
+                <textarea class="form-control" name="hari" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
