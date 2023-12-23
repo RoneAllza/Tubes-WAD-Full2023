@@ -6,22 +6,20 @@
     <title>MySU</title>
     <!-- Include Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="view-source:https://roneallza.github.io/Penghuni-Website/css/main.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">MySU</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('kegiatan_tahfizhs.index') }}">Kegiatan Tahfizh</a>
-                    </li>
-                    <!-- Tambahkan menu lain sesuai kebutuhan -->
-                </ul>
-            </div>
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <img src="https://roneallza.github.io/Penghuni-Website/img/logo_msu.webp" alt="PSU Logo" height="56" width="94">
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('kegiatan_tahfizhs.index') }}" style="font-size: 15px"><strong>Kegiatan Tahfizh</strong></a>
+                </li>
+                <!-- Tambahkan menu lain sesuai kebutuhan -->
+            </ul>
         </div>
     </nav>
 
@@ -29,6 +27,15 @@
         @yield('content')
     </div>
 
+    <footer class="bg-success text-white p-3 mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col">
+                    Created By Syamsul Ulum Creative Co.
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- Include Bootstrap JS and Popper.js for Bootstrap components -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
