@@ -19,13 +19,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/kegiatantahfiz', [KegiatanTahfizhController::class, 'index'])->name('kegiatantahfiz.indextahfiz');
-Route::get('/kegiatantahfiz/add', [KegiatanTahfizhController::class, 'create'])->name('kegiatantahfiz.createtahfiz');
-Route::post('/kegiatantahfiz/store', [KegiatanTahfizhController::class, 'store'])->name('kegiatantahfiz.store');
-Route::get('/kegiatantahfiz/edit', [KegiatanTahfizhController::class, 'edit'])->name('kegiatantahfiz.edittahfiz');
-Route::get('/kegiatantahfiz/update', [KegiatanTahfizhController::class, 'update'])->name('kegiatantahfiz.update');
-Route::get('/kegiatantahfiz/delete', [KegiatanTahfizhController::class, 'destroy'])->name('kegiatantahfiz.deletetahfiz');
+Route::get('/kegiatan_tahfizhs', [KegiatanTahfizhController::class, 'index'])->name('kegiatan_tahfizhs.index');
 
+// Rute untuk menampilkan formulir tambah kegiatan tahfizh dan menyimpan data baru
+Route::get('/kegiatan_tahfizhs/create', [KegiatanTahfizhController::class, 'create'])->name('kegiatan_tahfizhs.create');
+Route::post('/kegiatan_tahfizhs', [KegiatanTahfizhController::class, 'store'])->name('kegiatan_tahfizhs.store');
 
+// Rute untuk menampilkan formulir edit kegiatan tahfizh dan memperbarui data
+Route::get('/kegiatan_tahfizhs/{id}/edit', [KegiatanTahfizhController::class, 'edit'])->name('kegiatan_tahfizhs.edit');
+Route::put('/kegiatan_tahfizhs/{id}', [KegiatanTahfizhController::class, 'update'])->name('kegiatan_tahfizhs.update');
 
+// Rute untuk menghapus data kegiatan tahfizh
+Route::delete('/kegiatan_tahfizhs/{id}', [KegiatanTahfizhController::class, 'destroy'])->name('kegiatan_tahfizhs.destroy');
 

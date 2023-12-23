@@ -7,61 +7,54 @@ use Illuminate\Http\Request;
 
 class KegiatanTahfizhController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return view('kegiatantahfiz.indextahfiz');
+        $kegiatanTahfizhs = KegiatanTahfizh::all();
+        return view('kegiatan_tahfizh.index', compact('kegiatanTahfizhs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('kegiatantahfiz.createtahfiz');
+        return view('kegiatan_tahfizh.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        echo "anjay";
+        $request->validate([
+            'nama' => 'required',
+            'deskripsi' => 'required',
+            'jumlah' => 'required|numeric',
+        ]);
+
+        KegiatanTahfizh::create($request->all());
+        return redirect()->route('kegiatan_tahfizhs.index')->with('success', 'Data berhasil disimpan!');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(KegiatanTahfizh $kegiatanTahfizh)
+    public function edit($id)
     {
-        //
+        $kegiatanTahfizh = KegiatanTahfizh::findOrFail($id);
+        return view('kegiatan_tahfizh.edit', compact('kegiatanTahfizh'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(KegiatanTahfizh $kegiatanTahfizh)
+    public function update(Request $request, $id)
     {
-        return view('kegiatantahfiz.edittahfiz');
+        $request->validate([
+            'nama' => 'required',
+            'deskripsi' => 'required',
+            'jumlah' => 'required|numeric',
+        ]);
+
+        $kegiatanTahfizh = KegiatanTahfizh::findOrFail($id);
+        $kegiatanTahfizh->update($request->all());
+
+        return redirect()->route('kegiatan_tahfizhs.index')->with('success', 'Data berhasil diperbarui!');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, KegiatanTahfizh $kegiatanTahfizh)
+    public function destroy($id)
     {
-        echo "anjay";
-    }
+        $kegiatanTahfizh = KegiatanTahfizh::findOrFail($id);
+        $kegiatanTahfizh->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(KegiatanTahfizh $kegiatanTahfizh)
-    {
-        echo "anjay";
-        $kegiatantahfizh = KegiatanTahfizh::all();
-        return view('kegiatantahfiz.indextahfiz', compact('kegiatantahfiz'));
+        return redirect()->route('kegiatan_tahfizhs.index')->with('success', 'Data berhasil dihapus!');
     }
 }
