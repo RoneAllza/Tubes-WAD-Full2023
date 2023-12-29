@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="view-source:https://roneallza.github.io/Penghuni-Website/css/main.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light p-4">
-        <a class="navbar-brand" href="{{ url('home') }}">
-            <img src="https://roneallza.github.io/Penghuni-Website/img/logo_msu.webp" alt="PSU Logo" height="56" width="94">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url('home') }}" style="color:#f8f9fa">
+            ===<img src="https://roneallza.github.io/Penghuni-Website/img/logo_msu.webp" alt="PSU Logo" height="56" width="94">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,17 +28,12 @@
                         <a class="dropdown-item" href="{{ url('kegiatan_tahfizhs') }}">Kegiatan Tahfizh</a>
                         <a class="dropdown-item" href="{{ url('piket') }}">Piket</a>
                         <a class="dropdown-item" href="{{ url('kegiatanpembinaan') }}">Pembinaan</a>
+                        <a class="nav-link" href="{{ route('logout') }}" style="font-size: 15px"><strong>Log Out</strong></a>
                     </div>
                 </li>
             </ul>
 
         </div>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('logout') }}" style="font-size: 15px"><strong>Log Out</strong></a>
-            </li>
-            <!-- Tambahkan menu lain sesuai kebutuhan -->
-        </ul>
     </nav>
 
     <div class="container mt-4">
