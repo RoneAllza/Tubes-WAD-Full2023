@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class AktivitasMingguan extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['tilawah', 'murajaah', 'puasa', 'tahajud', 'dhuha', 'infaq', 'wirid', 'olahraga', 'telp', 'hafalan'];
 }
