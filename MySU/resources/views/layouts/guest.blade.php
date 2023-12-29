@@ -11,16 +11,18 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('home') }}">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="https://roneallza.github.io/Penghuni-Website/img/logo_msu.webp" alt="PSU Logo" height="56" width="94">
             </a>
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('user_management.index') }}" style="font-size: 15px"><strong>User Management</strong></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('kegiatan_tahfizhs.index') }}" style="font-size: 15px"><strong>Kegiatan Tahfizh</strong></a>
-                </li>
+            <li class="nav-item">
+    <a class="nav-link" href="{{ route('register') }}" style="font-size: 15px"><strong>Register</strong></a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="{{ route('login') }}" style="font-size: 15px"><strong>Login</strong></a>
+</li>
+
+
                 <!-- Tambahkan menu lain sesuai kebutuhan -->
             </ul>
         </div>

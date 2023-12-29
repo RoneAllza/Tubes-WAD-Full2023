@@ -58,3 +58,4 @@ class KegiatanTahfizhController extends Controller
         return redirect()->route('kegiatan_tahfizhs.index')->with('success', 'Data berhasil dihapus!');
     }
 }
+
