@@ -23,7 +23,7 @@
                         <textarea class="form-control" name="konten_pembinaan" rows="6" required>{{ $Aktivitasz->first()->konten_pembinaan }}</textarea>
                         <small class="form-text text-muted">Masukkan konten pembinaan di sini.</small>
                     </div>
-                    <button type="submit" class="btn btn-primary">Perbarui</button>
+                    <button type="submit" class="btn btn-primary mt-4">Perbarui</button>
                 </form>
             </div>
         </div>

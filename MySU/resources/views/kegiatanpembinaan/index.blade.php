@@ -26,7 +26,7 @@
                             <form action="{{ route('kegiatanpembinaan.destroy', $Aktvitasz->id) }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                <button type="submit" class="btn btn-danger mt-4">Hapus</button>
                             </form>
                         </td>
                     </tr>
