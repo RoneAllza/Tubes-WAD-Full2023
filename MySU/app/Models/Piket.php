@@ -8,6 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Piket extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['nama', 'hari'];
 }

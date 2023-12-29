@@ -12,7 +12,7 @@ class PerizinanPulangController extends Controller
      */
     public function index()
     {
-        return view('perizinanpulang.indexPulang');
+        //
     }
 
     /**
@@ -20,7 +20,7 @@ class PerizinanPulangController extends Controller
      */
     public function create()
     {
-        return view('perizinanpulang.createPulang');
+        //
     }
 
     /**
@@ -28,7 +28,7 @@ class PerizinanPulangController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //
     }
 
     /**
@@ -44,7 +44,7 @@ class PerizinanPulangController extends Controller
      */
     public function edit(PerizinanPulang $perizinanPulang)
     {
-        return view('perizinanpulang.editPulang');
+        //
     }
 
     /**
