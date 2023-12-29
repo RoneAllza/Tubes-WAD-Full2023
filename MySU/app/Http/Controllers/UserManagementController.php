@@ -26,7 +26,7 @@ class UserManagementController extends Controller
             'password' => 'required',
         ]);
 
-        UserManagement::create($request->all());
+        User::create($request->all());
         return redirect()->route('user_management.index')->with('success', 'User Berhasil Ditambahkan!');
     }
 
@@ -39,7 +39,6 @@ class UserManagementController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required',
             'email' => 'required',
         ]);
 

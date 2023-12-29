@@ -8,7 +8,7 @@
             @method('PUT')
             <div class="form-group mt-3">
                 <label for="nama">Nama:</label>
-                <input type="text" class="form-control" name="nama" value="{{ $userManagement->name }}" required>
+                <input type="text" class="form-control" name="nama" value="{{ $userManagement->name }}" disabled>
             </div>
             <div class="form-group mt-3">
                 <label for="deskripsi">Email address:</label>
