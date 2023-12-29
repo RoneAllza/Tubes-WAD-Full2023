@@ -23,6 +23,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Rute Manajemen Perizinan Pulang 
+Route::get('/perizinanpulang', [PerizinanPulangController::class, 'index'])->name('PerizinanPulang.indexPulang');
+Route::get('/perizinanpulang/create', [PerizinanPulangController::class, 'create'])->name('PerizinanPulang.createPulang');
+Route::get('/perizinanpulang/edit', [PerizinanPulangController::class, 'edit'])->name('PerizinanPulang.editPulang');
+
+
 //Rute untuk Manajemen Pembinaan
 Route::get('/kegiatanpembinaan/index', [AktivitasPembinaanController::class, 'index'])->name('kegiatanpembinaan.index');
 Route::get('/kegiatanpembinaan/create', [AktivitasPembinaanController::class, 'create'])->name('kegiatanpembinaan.create');
