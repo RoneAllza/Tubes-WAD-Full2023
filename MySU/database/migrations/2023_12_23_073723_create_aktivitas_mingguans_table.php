@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('aktivitas_mingguans', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->integer('tilawah');
             $table->integer('murajaah');
             $table->integer('puasa');

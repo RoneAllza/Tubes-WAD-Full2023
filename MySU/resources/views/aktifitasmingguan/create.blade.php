@@ -6,6 +6,11 @@
         <form action="{{ route('aktifitasmingguan.store') }}" method="POST">
             @csrf
             <div class="form-group">
+                <label for="name">Nama:</label>
+                <input type="text" class="form-control" name="name" placeholder="Nama pengisi" required>
+            </div>
+            <div class="form-group">
+            <div class="form-group">
                 <label for="tilawah">Catat Aktivitas Tilawah:</label>
                 <input type="number" class="form-control" name="tilawah" placeholder="Berapa halaman" required>
             </div>

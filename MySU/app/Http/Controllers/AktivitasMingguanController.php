@@ -30,6 +30,7 @@ class AktivitasMingguanController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'name' => "required",
             'tilawah' => 'required',
             'murajaah' => 'required',
             'puasa' => 'required',
@@ -70,6 +71,7 @@ class AktivitasMingguanController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'name' => "required",
             'tilawah' => 'required',
             'murajaah' => 'required',
             'puasa' => 'required',

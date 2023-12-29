@@ -7,6 +7,10 @@
                 @csrf
                 @method('PUT')
                 <div class="form-group">
+                    <label for="name">Nama Pengisi:</label>
+                    <input type="text" class="form-control" name="name" placeholder="Nama pengisi" required>
+                </div>
+                <div class="form-group">
                     <label for="tilawah">Catat Aktivitas Tilawah:</label>
                     <input type="number" class="form-control" name="tilawah" placeholder="Berapa halaman" value="{{ $kegiatanMingguan->tilawah }}" required>
                 </div>

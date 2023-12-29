@@ -9,5 +9,5 @@ class AktivitasMingguan extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['tilawah', 'murajaah', 'puasa', 'tahajud', 'dhuha', 'infaq', 'wirid', 'olahraga', 'telp', 'hafalan'];
+    protected $fillable = ['name', 'tilawah', 'murajaah', 'puasa', 'tahajud', 'dhuha', 'infaq', 'wirid', 'olahraga', 'telp', 'hafalan'];
 }

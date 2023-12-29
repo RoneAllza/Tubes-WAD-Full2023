@@ -7,6 +7,7 @@
         <table class="table mt-3">
             <thead>
                 <tr>
+                    <th>Nama Pengisi</th>
                     <th>Tilawah</th>
                     <th>Murajaah</th>
                     <th>Puasa Sunah</th>
@@ -17,11 +18,13 @@
                     <th>Olahraga</th>
                     <th>Telp org tua</th>
                     <th>Hafalan</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($kegiatanMingguans as $kegiatanMingguan)
                     <tr>
+                        <td>{{ $kegiatanMingguan->name }}</td>
                         <td>{{ $kegiatanMingguan->tilawah }}</td>
                         <td>{{ $kegiatanMingguan->murajaah }}</td>
                         <td>{{ $kegiatanMingguan->puasa }}</td>
