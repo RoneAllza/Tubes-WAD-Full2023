@@ -6,6 +6,7 @@ use App\Http\Controllers\PiketController;
 use App\Models\Piket;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AktivitasPembinaanController;
+use App\Http\Controllers\PerizinanPulangController;
 use App\Models\AktivitasPembinaan;
 
 /*
