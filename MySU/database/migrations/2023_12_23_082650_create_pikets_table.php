@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('pikets', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('hari');
             $table->timestamps();
         });
     }
