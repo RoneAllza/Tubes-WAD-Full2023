@@ -1,26 +1,58 @@
 @extends('layouts.app')
 
 @section('content')
+    
+    <link href="{{ asset('css/features.css') }}" rel="stylesheet">
     <!-- Main Content -->
     <main class="container mt-5">
         <h1>Selamat Datang di MySU!</h1>
         <p class="lead">Solusi digital untuk keasramaan dan masjid Syamsul Ulum</p>
-        <!-- Tombol-tombol menuju fitur-fitur -->
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <a href="#" class="btn btn-primary btn-lg btn-block mb-2">Aktivitas Mingguan</a>
+<!-- Kotak-kotak fitur -->
+<div class="row">
+            <div class="col-md-4 col-6 mb-3">
+                <a href="#">
+                    <div class="feature-box">
+                        <img src="{{ asset('IMG/Mingguan.jpg') }}" alt="Aktivitas Mingguan Image" class="feature-img mb-3" style="max-width: 75%; max-height: 200px;">
+                        <h3>Aktivitas Mingguan</h3>
+                        <p>Deskripsi singkat tentang fitur ini...</p>
+                    </div>
+                </a>
             </div>
-            <div class="col-md-6 mb-3">
-                <a href="#" class="btn btn-primary btn-lg btn-block mb-2">Aktivitas Pembinaan</a>
+            <div class="col-md-4 col-6 mb-3">
+                <a href="#">
+                    <div class="feature-box">
+                        <img src="{{ asset('IMG/Pembinaan.jpg') }}" alt="Aktivitas Pembinaan Image" class="feature-img mb-3" style="max-width: 75%; max-height: 200px;">
+                        <h3>Aktivitas Pembinaan</h3>
+                        <p>Deskripsi singkat tentang fitur ini...</p>
+                    </div>
+                </a>
             </div>
-            <div class="col-md-6 mb-3">
-                <a href="#" class="btn btn-primary btn-lg btn-block mb-2">Kegiatan Tahfidz</a>
+            <div class="col-md-4 col-6 mb-3">
+                <a href="#">
+                    <div class="feature-box">
+                        <img src="{{ asset('IMG/Tahfidzh.jpg') }}" alt="Kegiatan Tahfidz Image" class="feature-img mb-3" style="max-width: 55%; max-height: 200px;">
+                        <h3>Kegiatan Tahfidz</h3>
+                        <p>Deskripsi singkat tentang fitur ini...</p>
+                    </div>
+                </a>
             </div>
-            <div class="col-md-6 mb-3">
-                <a href="#" class="btn btn-primary btn-lg btn-block mb-2">Perizinan Pulang</a>
+            <div class="col-md-4 col-6 mb-3">
+                <a href="#">
+                    <div class="feature-box">
+                        <img src="{{ asset('IMG/Izin.jpg') }}" alt="Perizinan Pulang Image" class="feature-img mb-3" style="max-width: 75%; max-weight: 100px;">
+                        <h3>Perizinan Pulang</h3>
+                        <p>Deskripsi singkat tentang fitur ini...</p>
+                    </div>
+                </a>
             </div>
-            <div class="col-md-6 mb-3">
-                <a href="#" class="btn btn-primary btn-lg btn-block mb-2">Piket</a>
+            <div class="col-md-4 col-6 mb-3">
+                <a href="#">
+                    <div class="feature-box">
+                        <img src="url_to_image_5" alt="Piket Image" class="feature-img mb-3">
+                        <h3>Piket</h3>
+                        <p>Deskripsi singkat tentang fitur ini...</p>
+                    </div>
+                </a>
             </div>
         </div>
         <!-- About Us -->
@@ -32,4 +64,6 @@
         </div>
         <!-- Akhir dari konten utama lainnya -->
     </main>
-@endsection
+@endsection     
+
+

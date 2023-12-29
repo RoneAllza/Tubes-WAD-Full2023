@@ -1,0 +1,23 @@
+.feature-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+    height: 300px;
+}
+
+.feature-box:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box i {
+    font-size: 3em;
+    color: #007bff;
+}
+
+.feature-box h3 {
+    margin-top: 10px;
+    font-size: 1.5em;
+    color: #333;
+}
