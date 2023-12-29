@@ -1,0 +1,35 @@
+/* Di dalam file CSS Anda */
+.feature-box {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.feature-box .feature-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    color: white;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.feature-box:hover img {
+    opacity: 0.5;
+}
+
+.feature-box:hover .feature-text {
+    opacity: 1;
+}
