@@ -38,7 +38,7 @@ Route::delete('/kegiatan_tahfizhs/{id}', [KegiatanTahfizhController::class, 'des
 // Rute Nampilin Homepage
 Route::get('/home', [HomeController::class, 'index'])->name('welcome');
 
-
+//Rute untuk Piket
 Route::get('/piket', [PiketController::class, 'index'])->name('piket.index');
 Route::get('/piket/create', [PiketController::class, 'create'])->name('piket.create');
 Route::post('/piket', [PiketController::class, 'store'])->name('piket.store');
