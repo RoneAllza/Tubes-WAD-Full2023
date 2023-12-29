@@ -9,7 +9,7 @@
         <div class="row text-center">
             <div class="col-md-4 mb-4">
                 <div class="feature-box border p-3">
-                    <a href="#">
+                    <a href="{{ url('aktifitasmingguan') }}">
                         <img src="{{ asset('IMG/Mingguan.jpg') }}" alt="Aktivitas Mingguan" class="img-fluid mb-3">
                         <div class="feature-text">
                             <h3 class="btn btn-primary">Aktivitas Mingguan</h3>
@@ -19,7 +19,7 @@
             </div>
             <div class="col-md-4 mb-4">
                 <div class="feature-box border p-3">
-                    <a href="#">
+                    <a href="{{ url('kegiatanpembinaan') }}">
                         <img src="{{ asset('IMG/Pembinaan.jpg') }}" alt="Aktivitas Pembinaan" class="img-fluid mb-3">
                         <div class="feature-text">
                             <h3 class="btn btn-primary">Aktivitas Pembinaan</h3>
@@ -29,7 +29,7 @@
             </div>
             <div class="col-md-4 mb-4">
                 <div class="feature-box border p-3">
-                    <a href="#">
+                    <a href="{{ url('kegiatan_tahfizhs') }}">
                         <img src="{{ asset('IMG/Tahfidz.jpg') }}" alt="Kegiatan Tahfidz" class="img-fluid mb-3">
                         <div class="feature-text">
                             <h3 class="btn btn-primary">Kegiatan Tahfidz</h3>
@@ -49,7 +49,7 @@
             </div>
             <div class="col-md-4 mb-4">
                 <div class="feature-box border p-3">
-                    <a href="#">
+                    <a href="{{ url('piket') }}">
                         <img src="{{ asset('IMG/Piket.jpg') }}" alt="Piket" class="img-fluid mb-3">
                         <div class="feature-text">
                             <h3 class="btn btn-primary">Piket</h3>
