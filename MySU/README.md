@@ -1,4 +1,4 @@
-1.Run git clone <my-cool-project>
+1.Run git clone
 2.Run composer install
 3.Run cp .env.example .env
 4.Run php artisan key:generate
