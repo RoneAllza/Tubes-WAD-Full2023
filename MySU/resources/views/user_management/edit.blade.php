@@ -7,11 +7,11 @@
             @csrf
             @method('PUT')
             <div class="form-group mt-3">
-                <label for="nama">Nama:</label>
-                <input type="text" class="form-control" name="nama" value="{{ $userManagement->name }}" disabled>
+                <label for="name">Nama:</label>
+                <input type="text" class="form-control" name="name" value="{{ $userManagement->name }}" required>
             </div>
             <div class="form-group mt-3">
-                <label for="deskripsi">Email address:</label>
+                <label for="email">Email address:</label>
                 <input type="email" class="form-control" name="email" value="{{ $userManagement->email }}" required>
             </div>
             <button type="submit" class="btn btn-primary mt-3">Perbarui</button>
