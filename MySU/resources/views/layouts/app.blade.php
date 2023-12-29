@@ -28,7 +28,8 @@
                         <a class="dropdown-item" href="{{ url('kegiatan_tahfizhs') }}">Kegiatan Tahfizh</a>
                         <a class="dropdown-item" href="{{ url('piket') }}">Piket</a>
                         <a class="dropdown-item" href="{{ url('kegiatanpembinaan') }}">Pembinaan</a>
-                        <a class="nav-link" href="{{ route('logout') }}" style="font-size: 15px"><strong>Log Out</strong></a>
+                        <a class="dropdown-item" href="{{ url('aktifitasmingguan') }}">Weekly</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}" style="font-size: 15px"><strong>Log Out</strong></a>
                     </div>
                 </li>
             </ul>
