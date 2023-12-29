@@ -30,7 +30,7 @@ class RegisterController extends Controller
         if (Auth::attempt(['email' => $user->email, 'password' => $request->password])) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/home');
+            return redirect()->intended('/user_management');
         }
     }
 

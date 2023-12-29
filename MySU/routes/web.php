@@ -58,7 +58,7 @@ Route::group(['middleware' => 'role:user'], function () {
     // ...
 });
 
-Route::get('/user_management', [UserManagementController::class, 'index'])->name('user_management.index')->middleware('auth');
+Route::get('/user_management', [UserManagementController::class, 'index'])->name('user_management.index');
 
 // Rute untuk menampilkan formulir tambah kegiatan tahfizh dan menyimpan data baru
 Route::get('/user_management/create', [UserManagementController::class, 'create'])->name('user_management.create');

@@ -2,26 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UserManagement;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserManagementController extends Controller
 {
     public function index()
     {
-        $userManagement = UserManagement::all();
-        return view('user_management.index', compact('usermanagement'));
+        $userManagement = User::all();
+        return view('user_management.index', compact('userManagement'));
     }
 
     public function create()
     {
-        return view('usermanagement.create');
+        return view('register');
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required',
+            'name' => 'required',
             'email' => 'required',
             'password' => 'required',
         ]);
@@ -32,19 +32,18 @@ class UserManagementController extends Controller
 
     public function edit($id)
     {
-        $userManagement = UserManagement::findOrFail($id);
+        $userManagement = User::findOrFail($id);
         return view('user_management.edit', compact('userManagement'));
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama' => 'required',
+            'name' => 'required',
             'email' => 'required',
-            'password' => 'required',
         ]);
 
-        $userManagement = UserManagement::findOrFail($id);
+        $userManagement = User::findOrFail($id);
         $userManagement->update($request->all());
 
         return redirect()->route('user_management.index')->with('success', 'User berhasil diperbarui!');
@@ -52,9 +51,10 @@ class UserManagementController extends Controller
 
     public function destroy($id)
     {
-        $userManagement = UserManagement::findOrFail($id);
+        $userManagement = User::findOrFail($id);
         $userManagement->delete();
 
         return redirect()->route('user_management.index')->with('success', 'User berhasil dihapus!');
     }
 }
+
