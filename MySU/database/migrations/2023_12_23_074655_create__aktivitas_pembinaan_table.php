@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('aktivitas_pembinaans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_pembina');
+            $table->string('judul');
+            $table->string('konten_pembinaan');
             $table->timestamps();
         });
     }
