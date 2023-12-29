@@ -5,7 +5,7 @@ use App\Models\KegiatanTahfizh;
 use App\Http\Controllers\PiketController;
 use App\Models\Piket;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +34,9 @@ Route::put('/kegiatan_tahfizhs/{id}', [KegiatanTahfizhController::class, 'update
 // Rute untuk menghapus data kegiatan tahfizh
 Route::delete('/kegiatan_tahfizhs/{id}', [KegiatanTahfizhController::class, 'destroy'])->name('kegiatan_tahfizhs.destroy');
 
+
+// Rute Nampilin Homepage
+Route::get('/home', [HomeController::class, 'index'])->name('welcome');
 
 
 Route::get('/piket', [PiketController::class, 'index'])->name('piket.index');
