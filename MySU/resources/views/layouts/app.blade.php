@@ -17,6 +17,8 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('kegiatanpembinaan.index') }}" style="font-size: 15px"><strong>Aktivitas Pembinaan</strong></a>
+                    <a class="nav-link" href="{{ route('piket.index') }}" style="font-size: 15px"><strong>Manage Piket</strong></a>
+                    <a class="nav-link" href="{{ route('kegiatan_tahfizhs.index') }}" style="font-size: 15px"><strong>Kegiatan Tahfizh</strong></a>
                 </li>
                 <!-- Tambahkan menu lain sesuai kebutuhan -->
             </ul>
@@ -40,3 +42,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

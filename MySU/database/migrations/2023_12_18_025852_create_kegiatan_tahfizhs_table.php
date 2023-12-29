@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('kegiatan_tahfizhs', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('deskripsi');
+            $table->string('jumlah');
             $table->timestamps();
         });
     }
