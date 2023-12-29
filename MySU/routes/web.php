@@ -4,6 +4,7 @@ use App\Http\Controllers\KegiatanTahfizhController;
 use App\Models\KegiatanTahfizh;
 use App\Models\UserManagement;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AktivitasMingguanController;
 use App\Http\Controllers\PiketController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
@@ -23,6 +24,14 @@ use App\Http\Controllers\UserManagementController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Rute Aktivitas Mingguan
+Route::get('/aktifitasmingguan', [AktivitasMingguanController::class, 'index'])->name('aktifitasmingguan.index');
+Route::get('/aktifitasmingguan/create', [AktivitasMingguanController::class, 'create'])->name('aktifitasmingguan.create');
+Route::post('/aktifitasmingguan', [AktivitasMingguanController::class, 'store'])->name('aktifitasmingguan.store');
+Route::get('/aktifitasmingguan/{id}/edit', [AktivitasMingguanController::class, 'edit'])->name('aktifitasmingguan.edit');
+Route::put('/aktifitasmingguan/{id}', [AktivitasMingguanController::class, 'update'])->name('aktifitasmingguan.update');
+Route::delete('/aktifitasmingguan/{id}', [AktivitasMingguanController::class, 'destroy'])->name('aktifitasmingguan.destroy');
 
 //Rute Auth
 Route::view('/home', 'home')->name('home')->middleware('auth');
@@ -45,7 +54,6 @@ Route::post('/user_management', [UserManagementController::class, 'store'])->nam
 Route::get('/user_management/{id}/edit', [UserManagementController::class, 'edit'])->name('user_management.edit');
 Route::put('/user_management/{id}', [UserManagementController::class, 'update'])->name('user_management.update');
 Route::delete('/user_management/{id}', [UserManagementController::class, 'destroy'])->name('user_management.destroy');
-
 
 //Rute untuk Manajemen Pembinaan
 Route::get('/kegiatanpembinaan', [AktivitasPembinaanController::class, 'index'])->name('kegiatanpembinaan.index');

@@ -40,6 +40,7 @@
         @yield('content')
     </div>
 
+
     <footer class="bg-success text-white p-3 mt-5">
         <div class="container">
             <div class="row justify-content-center">
