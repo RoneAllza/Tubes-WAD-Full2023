@@ -39,6 +39,9 @@ class AktivitasPembinaanController extends Controller
         // Anda bisa menambahkan validasi lainnya sesuai kebutuhan
     ]);
 
+    // Ambil hanya sebagian dari konten_pembinaan sebagai preview
+    $kontenPreview = substr($request->input('konten_pembinaan'), 0, 100); // Ubah 100 sesuai dengan panjang preview yang diinginkan
+
     // Simpan data ke database (asumsi model AktivitasPembinaan digunakan)
     AktivitasPembinaan::create([
         'nama_pembina' => $request->input('nama_pembina'),
@@ -62,16 +65,16 @@ class AktivitasPembinaanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AktivitasPembinaan $aktivitasPembinaan)
+    public function edit($id)
     {
-        $Aktvitasz = AktivitasPembinaan::all();
+        $Aktvitasz = AktivitasPembinaan::findOrFail($id);
         return view('kegiatanpembinaan.edit', compact('Aktvitasz'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AktivitasPembinaan $aktivitasPembinaan)
+    public function update(Request $request, $id)
     {
         // Validasi input
     $request->validate([
@@ -82,7 +85,7 @@ class AktivitasPembinaanController extends Controller
     ]);
 
     // Temukan data yang akan diubah dan update (asumsi model AktivitasPembinaan digunakan)
-    $aktivitas = AktivitasPembinaan::findOrFail($request->id);
+    $aktivitas = AktivitasPembinaan::findOrFail($id);
     $aktivitas->update([
         'nama_pembina' => $request->input('nama_pembina'),
         'judul' => $request->input('judul'),

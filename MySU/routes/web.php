@@ -22,6 +22,6 @@ Route::get('/', function () {
 Route::get('/kegiatanpembinaan/index', [AktivitasPembinaanController::class, 'index'])->name('kegiatanpembinaan.index');
 Route::get('/kegiatanpembinaan/create', [AktivitasPembinaanController::class, 'create'])->name('kegiatanpembinaan.create');
 Route::post('/kegiatanpembinaan/store', [AktivitasPembinaanController::class, 'store'])->name('kegiatanpembinaan.store');
-Route::get('/kegiatanpembinaan/edit', [AktivitasPembinaanController::class, 'edit'])->name('kegiatanpembinaan.edit');
+Route::get('/kegiatanpembinaan/{id}/edit', [AktivitasPembinaanController::class, 'edit'])->name('kegiatanpembinaan.edit');
 Route::put('/kegiatanpembinaan/{id}', [AktivitasPembinaanController::class, 'update'])->name('kegiatanpembinaan.update');
 Route::delete('/kegiatanpembinaan/{id}', [AktivitasPembinaanController::class, 'destroy'])->name('kegiatanpembinaan.destroy');
