@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/perizinanpulang', [PerizinanPulangController::class, 'index'])->name('PerizinanPulang.indexPulang');
+Route::get('/perizinanpulang/create', [PerizinanPulangController::class, 'create'])->name('PerizinanPulang.createPulang');
+Route::get('/perizinanpulang/edit', [PerizinanPulangController::class, 'edit'])->name('PerizinanPulang.editPulang');
