@@ -7,59 +7,54 @@ use Illuminate\Http\Request;
 
 class AktivitasPembinaanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $aktivitas = AktivitasPembinaan::all();
+        return view('kegiatanpembinaan.index', compact('aktivitas'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('kegiatanpembinaan.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_pembina' => 'required',
+            'judul' => 'required',
+            'konten_pembinaan' => 'required',
+        ]);
+
+        AktivitasPembinaan::create($request->all());
+        return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil disimpan!');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(AktivitasPembinaan $aktivitasPembinaan)
+    public function edit($id)
     {
-        //
+        $Aktivitasz = AktivitasPembinaan::findOrFail($id);
+        return view('kegiatanpembinaan.edit', compact('Aktivitasz'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(AktivitasPembinaan $aktivitasPembinaan)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_pembina' => 'required',
+            'judul' => 'required',
+            'konten_pembinaan' => 'required',
+        ]);
+
+        $AktivitasPembinaan = AktivitasPembinaan::findOrFail($id);
+        $AktivitasPembinaan->update($request->all());
+
+        return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil diperbarui!');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, AktivitasPembinaan $aktivitasPembinaan)
+    public function destroy($id)
     {
-        //
-    }
+        $AktivitasPembinaan = AktivitasPembinaan::findOrFail($id);
+        $AktivitasPembinaan->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(AktivitasPembinaan $aktivitasPembinaan)
-    {
-        //
+        return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil dihapus!');
     }
 }
