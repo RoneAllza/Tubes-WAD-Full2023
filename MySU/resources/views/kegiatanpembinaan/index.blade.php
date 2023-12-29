@@ -20,7 +20,7 @@
 						<td>{{ $Aktvitasz->id }}</td>
                         <td>{{ $Aktvitasz->nama_pembina }}</td>
                         <td>{{ $Aktvitasz->judul }}</td>
-                        <td>{{ $Aktvitasz->konten_pembinaan }}</td>
+                        <td>{{ strlen($Aktvitasz->konten_pembinaan) > 30 ? substr($Aktvitasz->konten_pembinaan, 0, 30) . '...' : $Aktvitasz->konten_pembinaan }}</td>
                         <td>
                             <a href="{{ route('kegiatanpembinaan.edit', $Aktvitasz->id) }}" class="btn btn-warning">Edit</a>
                             <form action="{{ route('kegiatanpembinaan.destroy', $Aktvitasz->id) }}" method="POST" style="display: inline-block;">

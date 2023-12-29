@@ -19,6 +19,35 @@ class AktivitasPembinaanController extends Controller
     }
 
     public function store(Request $request)
+  {
+      // Validasi input
+      $request->validate([
+          'nama_pembina' => 'required',
+          'judul' => 'required',
+          'konten_pembinaan' => 'required',
+          // Anda bisa menambahkan validasi lainnya sesuai kebutuhan
+      ]);
+
+      // Ambil hanya sebagian dari konten_pembinaan sebagai preview
+      $kontenPreview = substr($request->input('konten_pembinaan'), 0, 100); // Ubah 100 sesuai dengan panjang preview yang diinginkan
+
+      // Simpan data ke database (asumsi model AktivitasPembinaan digunakan)
+      AktivitasPembinaan::create([
+          'nama_pembina' => $request->input('nama_pembina'),
+          'judul' => $request->input('judul'),
+          'konten_pembinaan' => $request->input('konten_pembinaan'),
+          // Anda dapat menambahkan field lainnya sesuai kebutuhan
+      ]);
+
+      return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil disimpan!');
+  }
+
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(AktivitasPembinaan $aktivitasPembinaan)
+
     {
         $request->validate([
             'nama_pembina' => 'required',
@@ -30,11 +59,18 @@ class AktivitasPembinaanController extends Controller
         return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil disimpan!');
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     */
     public function edit($id)
     {
-        $Aktivitasz = AktivitasPembinaan::findOrFail($id);
-        return view('kegiatanpembinaan.edit', compact('Aktivitasz'));
+        $Aktvitasz = AktivitasPembinaan::findOrFail($id);
+        return view('kegiatanpembinaan.edit', compact('Aktvitasz'));
     }
+
+    /**
+     * Update the specified resource in storage.
+     */
 
     public function update(Request $request, $id)
     {
@@ -44,8 +80,14 @@ class AktivitasPembinaanController extends Controller
             'konten_pembinaan' => 'required',
         ]);
 
-        $AktivitasPembinaan = AktivitasPembinaan::findOrFail($id);
-        $AktivitasPembinaan->update($request->all());
+    // Temukan data yang akan diubah dan update (asumsi model AktivitasPembinaan digunakan)
+    $aktivitas = AktivitasPembinaan::findOrFail($id);
+    $aktivitas->update([
+        'nama_pembina' => $request->input('nama_pembina'),
+        'judul' => $request->input('judul'),
+        'konten_pembinaan' => $request->input('konten_pembinaan'),
+        // tambahkan field lainnya sesuai kebutuhan
+    ]);
 
         return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil diperbarui!');
     }
