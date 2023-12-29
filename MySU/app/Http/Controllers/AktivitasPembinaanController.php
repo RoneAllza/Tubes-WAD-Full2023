@@ -7,59 +7,56 @@ use Illuminate\Http\Request;
 
 class AktivitasPembinaanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-     // Ambil data dari database (asumsi model AktivitasPembinaan digunakan)
         $aktivitas = AktivitasPembinaan::all();
-        return view('kegiatanpembinaan.index', compact('aktivitas'));;
+        return view('kegiatanpembinaan.index', compact('aktivitas'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('kegiatanpembinaan.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    
     public function store(Request $request)
-{
-    // Validasi input
-    $request->validate([
-        'nama_pembina' => 'required',
-        'judul' => 'required',
-        'konten_pembinaan' => 'required',
-        // Anda bisa menambahkan validasi lainnya sesuai kebutuhan
-    ]);
+  {
+      // Validasi input
+      $request->validate([
+          'nama_pembina' => 'required',
+          'judul' => 'required',
+          'konten_pembinaan' => 'required',
+          // Anda bisa menambahkan validasi lainnya sesuai kebutuhan
+      ]);
 
-    // Ambil hanya sebagian dari konten_pembinaan sebagai preview
-    $kontenPreview = substr($request->input('konten_pembinaan'), 0, 100); // Ubah 100 sesuai dengan panjang preview yang diinginkan
+      // Ambil hanya sebagian dari konten_pembinaan sebagai preview
+      $kontenPreview = substr($request->input('konten_pembinaan'), 0, 100); // Ubah 100 sesuai dengan panjang preview yang diinginkan
 
-    // Simpan data ke database (asumsi model AktivitasPembinaan digunakan)
-    AktivitasPembinaan::create([
-        'nama_pembina' => $request->input('nama_pembina'),
-        'judul' => $request->input('judul'),
-        'konten_pembinaan' => $request->input('konten_pembinaan'),
-        // Anda dapat menambahkan field lainnya sesuai kebutuhan
-    ]);
+      // Simpan data ke database (asumsi model AktivitasPembinaan digunakan)
+      AktivitasPembinaan::create([
+          'nama_pembina' => $request->input('nama_pembina'),
+          'judul' => $request->input('judul'),
+          'konten_pembinaan' => $request->input('konten_pembinaan'),
+          // Anda dapat menambahkan field lainnya sesuai kebutuhan
+      ]);
 
-    return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil disimpan!');
-}
+      return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil disimpan!');
+  }
 
 
     /**
      * Display the specified resource.
      */
     public function show(AktivitasPembinaan $aktivitasPembinaan)
+
     {
-        //
+        $request->validate([
+            'nama_pembina' => 'required',
+            'judul' => 'required',
+            'konten_pembinaan' => 'required',
+        ]);
+
+        AktivitasPembinaan::create($request->all());
+        return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil disimpan!');
     }
 
     /**
@@ -74,15 +71,14 @@ class AktivitasPembinaanController extends Controller
     /**
      * Update the specified resource in storage.
      */
+
     public function update(Request $request, $id)
     {
-        // Validasi input
-    $request->validate([
-        'nama_pembina' => 'required',
-        'judul' => 'required',
-        'konten_pembinaan' => 'required',
-        // tambahkan validasi lain sesuai kebutuhan
-    ]);
+        $request->validate([
+            'nama_pembina' => 'required',
+            'judul' => 'required',
+            'konten_pembinaan' => 'required',
+        ]);
 
     // Temukan data yang akan diubah dan update (asumsi model AktivitasPembinaan digunakan)
     $aktivitas = AktivitasPembinaan::findOrFail($id);
@@ -93,19 +89,14 @@ class AktivitasPembinaanController extends Controller
         // tambahkan field lainnya sesuai kebutuhan
     ]);
 
-    return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil diperbarui!');
-}
-    
+        return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil diperbarui!');
+    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy($id)
     {
-        // Temukan data yang akan dihapus dan hapus (asumsi model AktivitasPembinaan digunakan)
-    $aktivitas = AktivitasPembinaan::findOrFail($id);
-    $aktivitas->delete();
+        $AktivitasPembinaan = AktivitasPembinaan::findOrFail($id);
+        $AktivitasPembinaan->delete();
 
-    return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil dihapus!');
+        return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil dihapus!');
     }
 }

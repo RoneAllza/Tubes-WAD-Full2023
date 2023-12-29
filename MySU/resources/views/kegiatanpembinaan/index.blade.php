@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h2>Aktivitas Pembinaaan</h2>
+    <div class="container mt-3">
+        <h2>Aktivitas Pembinaan</h2>
         <a href="{{ route('kegiatanpembinaan.create') }}" class="btn btn-success">Tambah Aktivitas Pembinaan</a>
         <table class="table mt-3">
             <thead>
@@ -26,7 +26,7 @@
                             <form action="{{ route('kegiatanpembinaan.destroy', $Aktvitasz->id) }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                <button type="submit" class="btn btn-danger mt-4">Hapus</button>
                             </form>
                         </td>
                     </tr>

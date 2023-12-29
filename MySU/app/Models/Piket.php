@@ -9,5 +9,8 @@ class Piket extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama', 'hari'];
+    protected $fillable =[
+        'nama',
+        'hari'
+    ];
 }

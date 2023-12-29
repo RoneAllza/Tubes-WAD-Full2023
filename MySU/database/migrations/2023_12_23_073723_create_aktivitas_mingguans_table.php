@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('aktivitas_mingguans', function (Blueprint $table) {
             $table->id();
+            $table->integer('tilawah');
+            $table->integer('murajaah');
+            $table->integer('puasa');
+            $table->integer('tahajud');
+            $table->integer('dhuha');
+            $table->integer('infaq');
+            $table->integer('wirid');
+            $table->integer('olahraga');
+            $table->integer('telp');
+            $table->integer('hafalan');
             $table->timestamps();
         });
     }

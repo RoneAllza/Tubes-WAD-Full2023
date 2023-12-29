@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.guest')
 
 @section('content')
  <!-- Jumbotron for welcome section -->
@@ -17,7 +17,7 @@
             </div>
         </div>
     </section>
-    
+
     <section id="about" class="bg-light">
         <div class="container">
           <div class="row text-center mb-5">

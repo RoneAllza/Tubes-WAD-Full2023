@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class AktivitasPembinaan extends Model
 {
     use HasFactory;
-    protected $fillable = ['nama_pembina', 'judul', 'konten_pembinaan'];
-}
 
+    protected $fillable =[
+        'nama_pembina',
+        'judul',
+        'konten_pembinaan'
+    ];
+}
