@@ -35,7 +35,7 @@ Route::put('/kegiatan_tahfizhs/{id}', [KegiatanTahfizhController::class, 'update
 Route::delete('/kegiatan_tahfizhs/{id}', [KegiatanTahfizhController::class, 'destroy'])->name('kegiatan_tahfizhs.destroy');
 
 
-
+//Rute untuk Piket
 Route::get('/piket', [PiketController::class, 'index'])->name('piket.index');
 Route::get('/piket/create', [PiketController::class, 'create'])->name('piket.create');
 Route::post('/piket', [PiketController::class, 'store'])->name('piket.store');
