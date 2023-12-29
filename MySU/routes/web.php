@@ -26,11 +26,11 @@ Route::get('/', function () {
 
 //Rute Auth
 Route::view('/home', 'home')->name('home')->middleware('auth');
-Route::get('/register', [RegisterController::class, 'create'])->name('register')->middleware('guest');
-Route::post('/register', [RegisterController::class, 'store'])->name('register')->middleware('guest');
+Route::get('/register', [RegisterController::class, 'create'])->name('register')->middleware('auth');
+Route::post('/register', [RegisterController::class, 'store'])->name('register')->middleware('auth');
 Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('guest');
-Route::post('/logout', function () {
+Route::get('/logout', function () {
     auth()->logout();
     request()->session()->invalidate();
     request()->session()->regenerateToken();
@@ -51,7 +51,7 @@ Route::delete('/user_management/{id}', [UserManagementController::class, 'destro
 Route::get('/kegiatanpembinaan', [AktivitasPembinaanController::class, 'index'])->name('kegiatanpembinaan.index');
 Route::get('/kegiatanpembinaan/create', [AktivitasPembinaanController::class, 'create'])->name('kegiatanpembinaan.create');
 Route::post('/kegiatanpembinaan/store', [AktivitasPembinaanController::class, 'store'])->name('kegiatanpembinaan.store');
-Route::get('/kegiatanpembinaan/edit', [AktivitasPembinaanController::class, 'edit'])->name('kegiatanpembinaan.edit');
+Route::get('/kegiatanpembinaan/{id}/edit', [AktivitasPembinaanController::class, 'edit'])->name('kegiatanpembinaan.edit');
 Route::put('/kegiatanpembinaan/{id}', [AktivitasPembinaanController::class, 'update'])->name('kegiatanpembinaan.update');
 Route::delete('/kegiatanpembinaan/{id}', [AktivitasPembinaanController::class, 'destroy'])->name('kegiatanpembinaan.destroy');
 

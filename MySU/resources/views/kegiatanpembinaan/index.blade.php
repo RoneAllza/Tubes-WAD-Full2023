@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h2>Aktivitas Pembinaaan</h2>
+    <div class="container mt-3">
+        <h2>Aktivitas Pembinaan</h2>
         <a href="{{ route('kegiatanpembinaan.create') }}" class="btn btn-success">Tambah Aktivitas Pembinaan</a>
         <table class="table mt-3">
             <thead>

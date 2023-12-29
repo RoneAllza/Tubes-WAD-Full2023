@@ -9,45 +9,45 @@ class AktivitasPembinaanController extends Controller
 {
     public function index()
     {
-        $AktivitasPembinaan = AktivitasPembinaan::all();
-        return view('AktivitasPembinaan.index', compact('AktivitasPembinaan'));
+        $aktivitas = AktivitasPembinaan::all();
+        return view('kegiatanpembinaan.index', compact('aktivitas'));
     }
 
     public function create()
     {
-        return view('AktivitasPembinaan.create');
+        return view('kegiatanpembinaan.create');
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required',
-            'deskripsi' => 'required',
-            'jumlah' => 'required|numeric',
+            'nama_pembina' => 'required',
+            'judul' => 'required',
+            'konten_pembinaan' => 'required',
         ]);
 
         AktivitasPembinaan::create($request->all());
-        return redirect()->route('AktivitasPembinaan.index')->with('success', 'Data berhasil disimpan!');
+        return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil disimpan!');
     }
 
     public function edit($id)
     {
-        $AktivitasPembinaan = AktivitasPembinaan::findOrFail($id);
-        return view('AktivitasPembinaan.edit', compact('AktivitasPembinaan'));
+        $Aktivitasz = AktivitasPembinaan::findOrFail($id);
+        return view('kegiatanpembinaan.edit', compact('Aktivitasz'));
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama' => 'required',
-            'deskripsi' => 'required',
-            'jumlah' => 'required|numeric',
+            'nama_pembina' => 'required',
+            'judul' => 'required',
+            'konten_pembinaan' => 'required',
         ]);
 
         $AktivitasPembinaan = AktivitasPembinaan::findOrFail($id);
         $AktivitasPembinaan->update($request->all());
 
-        return redirect()->route('AktivitasPembinaan.index')->with('success', 'Data berhasil diperbarui!');
+        return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil diperbarui!');
     }
 
     public function destroy($id)
@@ -55,6 +55,6 @@ class AktivitasPembinaanController extends Controller
         $AktivitasPembinaan = AktivitasPembinaan::findOrFail($id);
         $AktivitasPembinaan->delete();
 
-        return redirect()->route('AktivitasPembinaan.index')->with('success', 'Data berhasil dihapus!');
+        return redirect()->route('kegiatanpembinaan.index')->with('success', 'Data berhasil dihapus!');
     }
 }
