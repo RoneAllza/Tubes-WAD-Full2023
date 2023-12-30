@@ -23,12 +23,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Rute Manajemen Perizinan Pulang ADRIN
+// Rute Manajemen Perizinan Pulang
 
 Route::get('/perizinanpulang', [PerizinanPulangController::class, 'index'])->name('PerizinanPulang.indexPulang');
 Route::get('/perizinanpulang/create', [PerizinanPulangController::class, 'create'])->name('PerizinanPulang.createPulang');
 Route::get('/perizinanpulang/edit', [PerizinanPulangController::class, 'edit'])->name('PerizinanPulang.editPulang');
-
+Route::post('/perizinanpulang/store', [PerizinanPulangController::class, 'store'])->name('perizinanpulang.store');
+Route::put('/perizinanpulang/{id}', [PerizinanPulangController::class, 'update'])->name('perizinanpulang.update');
+Route::delete('/perizinanpulang/{id}', [PerizinanPulangController::class, 'destroy'])->name('perizinanpulang.destroy');
 
 //Rute untuk Manajemen Pembinaan
 Route::get('/kegiatanpembinaan/index', [AktivitasPembinaanController::class, 'index'])->name('kegiatanpembinaan.index');
