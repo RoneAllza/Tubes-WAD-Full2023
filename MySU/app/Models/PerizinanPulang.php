@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class PerizinanPulang extends Model
 {
     use HasFactory;
+    protected $fillable = ['nama', 'alamat', 'alasan', 'jam_pulang'];
 }

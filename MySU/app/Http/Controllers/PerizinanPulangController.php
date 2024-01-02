@@ -7,59 +7,57 @@ use Illuminate\Http\Request;
 
 class PerizinanPulangController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        return view('perizinanpulang.indexPulang');
+        $PerizinanPulangs = PerizinanPulang::all();
+        return view('perizinanpulang.index', compact('PerizinanPulangs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('perizinanpulang.createPulang');
+        return view('perizinanpulang.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
+        $request->validate([
+            'nama' => 'required',
+            'alasan' => 'required',
+            'alamat'=> 'required', 
+            // 'jam_pulang'=> 'required',
+        ]);
+
+        PerizinanPulang::create($request->all());
+        return redirect()->route('perizinanpulangs.index')->with('success', 'Data berhasil disimpan!');
+    }
+
+    public function edit($id)
+    {
+        $PerizinanPulang = PerizinanPulang::findOrFail($id);
+        return view('perizinanpulang.edit', compact('PerizinanPulang'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nama' => 'required',
+            'alasan' => 'required',
+            'alamat'=> 'required',
+        ]);
+
+        $PerizinanPulang = PerizinanPulang::findOrFail($id);
+        $PerizinanPulang->update($request->all());
+
+        return redirect()->route('perizinanpulangs.index')->with('success', 'Data berhasil diupdate!');
+    }
+
+    public function destroy($id)
+    {
         
-    }
+        $PerizinanPulang = PerizinanPulang::findOrFail($id);
+        $PerizinanPulang->delete();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(PerizinanPulang $perizinanPulang)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(PerizinanPulang $perizinanPulang)
-    {
-        return view('perizinanpulang.editPulang');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, PerizinanPulang $perizinanPulang)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(PerizinanPulang $perizinanPulang)
-    {
-        //
+        return redirect()->route('PerizinanPulang.index')->with('success', 'Data berhasil terhapus!');
     }
 }

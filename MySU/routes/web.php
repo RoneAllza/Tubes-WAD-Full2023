@@ -7,6 +7,7 @@ use App\Models\Piket;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AktivitasPembinaanController;
 use App\Models\AktivitasPembinaan;
+use App\Http\Controllers\PerizinanPulangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,12 +26,12 @@ Route::get('/', function () {
 
 // Rute Manajemen Perizinan Pulang
 
-Route::get('/perizinanpulang', [PerizinanPulangController::class, 'index'])->name('PerizinanPulang.indexPulang');
-Route::get('/perizinanpulang/create', [PerizinanPulangController::class, 'create'])->name('PerizinanPulang.createPulang');
-Route::get('/perizinanpulang/edit', [PerizinanPulangController::class, 'edit'])->name('PerizinanPulang.editPulang');
-Route::post('/perizinanpulang/store', [PerizinanPulangController::class, 'store'])->name('perizinanpulang.store');
-Route::put('/perizinanpulang/{id}', [PerizinanPulangController::class, 'update'])->name('perizinanpulang.update');
-Route::delete('/perizinanpulang/{id}', [PerizinanPulangController::class, 'destroy'])->name('perizinanpulang.destroy');
+Route::get('/perizinanpulangs', [PerizinanPulangController::class, 'index'])->name('perizinanpulangs.index');
+Route::get('/perizinanpulangs/create', [PerizinanPulangController::class, 'create'])->name('perizinanpulangs.create');
+Route::get('/perizinanpulangs/{id}/edit', [PerizinanPulangController::class, 'edit'])->name('perizinanpulangs.edit');
+Route::post('/perizinanpulangs', [PerizinanPulangController::class, 'store'])->name('perizinanpulangs.store');
+Route::put('/perizinanpulangs/{id}', [PerizinanPulangController::class, 'update'])->name('perizinanpulangs.update');
+Route::delete('/perizinanpulangs/{id}', [PerizinanPulangController::class, 'destroy'])->name('perizinanpulangs.destroy');
 
 //Rute untuk Manajemen Pembinaan
 Route::get('/kegiatanpembinaan/index', [AktivitasPembinaanController::class, 'index'])->name('kegiatanpembinaan.index');
