@@ -24,8 +24,8 @@ class PerizinanPulangController extends Controller
         $request->validate([
             'nama' => 'required',
             'alasan' => 'required',
-            'alamat'=> 'required', 
-            // 'jam_pulang'=> 'required',
+            'alamat'=> 'required',
+             
         ]);
 
         PerizinanPulang::create($request->all());

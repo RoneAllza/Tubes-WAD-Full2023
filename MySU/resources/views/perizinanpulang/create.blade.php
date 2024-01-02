@@ -21,13 +21,10 @@
                         <label for="alamat">alamat:</label>
                         <input type="text" class="form-control" name="alamat" required>
                     </div>
-                    <!-- <div class="form-group">
-                        <label for="jam_pulang">Jam Pulang:</label>
-                        <input type="time" class="form-control" name="jam_pulang" required>
-                    </div> -->
+
                     <button type="submit" class="btn btn-primary">Ajukan Izin Pulang</button>
                 </form>
             </div>
         </div>
     </div>
-@endsection
+@endsection 
